@@ -1,0 +1,228 @@
+/* Base Styles */
+body {
+  background-color: #0f172a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.navbar {
+  background-color: #1e293b !important;
+}
+
+h2, h3 {
+  transition: color 0.3s;
+}
+
+.btn-info {
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  animation: pulse 0.8s ease-in-out infinite alternate;
+}
+
+/* Light Mode */
+body.light-mode {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+body.light-mode .navbar {
+  background-color: #ffffff !important;
+}
+
+body.light-mode .about,
+body.light-mode .skills-section,
+body.light-mode .projects-section,
+body.light-mode .contact-section {
+  background-color: #ffffff !important;
+  color: #000 !important;
+}
+
+body.light-mode .progress-bar {
+  color: #000;
+}
+
+body.light-mode .btn-outline-light {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Glowing Colorful Border */
+.colorful-border {
+  padding: 8px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff00, #ff0000);
+  background-size: 300% 300%;
+  animation: borderGlow 4s linear infinite;
+  transition: transform 0.3s;
+}
+
+.colorful-border:hover {
+  transform: scale(1.05);
+}
+
+.colorful-border img {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  transition: box-shadow 0.5s ease;
+}
+
+.colorful-border:hover img {
+  box-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typewriter Cursor */
+#typewriter::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Skill Progress Bars */
+.animated-bar {
+  width: 0%;
+  animation: growBar 2s ease-out forwards;
+}
+
+@keyframes growBar {
+  0% { width: 0; }
+  100% { width: var(--progress); }
+}
+
+/* Project Cards */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Pulse Button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px #00bcd4;
+  }
+  100% {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px #00bcd4;
+  }
+}
+
+/* Forms and Placeholders */
+form input,
+form textarea {
+  background-color: #0f172a;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0dcaf0;
+  box-shadow: 0 0 8px rgba(13, 202, 240, 0.4);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
+}
+
+body.light-mode form input,
+body.light-mode form textarea {
+  background-color: #ffffff;
+  color: #000;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #0f2027;
+  color: white;
+  padding: 40px 20px;
+}
+
+body.light-mode .contact-section {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+form button[type="submit"] {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .contact-section .col-md-5,
+  .contact-section .col-md-6 {
+    width: 100%;
+  }
+
+  .colorful-border {
+    padding: 5px;
+  }
+}
