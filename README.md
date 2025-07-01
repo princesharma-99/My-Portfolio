@@ -25,8 +25,7 @@ A fully responsive and animated personal portfolio website built with **HTML**, 
 
 ## 📷 Preview
 
-![Screenshot 1](images/project1.jpg)  
-![Screenshot 2](images/project2.jpg)
+![Screenshot 1](Screenshot 2025-06-30 210803.png)  
 
 ---
 
